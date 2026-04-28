@@ -1,18 +1,43 @@
 const projects = [
   {
-    title: "Családi ház tetőfelújítás",
+    title: "Tetőfelújítás - Referencia 1",
     location: "Budapest",
-    image: "/images/project-1.jpg",
+    image: "/images/Messenger_creation_3F2E7DEA-D690-489C-80C8-43D234C01C4A.jpg",
   },
   {
-    title: "Lakópark tetőfedés",
+    title: "Tetőfedés - Referencia 2",
     location: "Debrecen",
-    image: "/images/project-2.jpg",
+    image: "/images/Messenger_creation_44523078-6F33-45A0-930E-8CC1F73A3BF6.jpg",
   },
   {
-    title: "Villa bádogozás",
+    title: "Bádogozás - Referencia 3",
     location: "Győr",
-    image: "/images/project-3.jpg",
+    image: "/images/Messenger_creation_730C3007-224B-4C94-8662-5AD89A070DC0.jpg",
+  },
+  {
+    title: "Tetőjavítás - Referencia 4",
+    location: "Székesfehérvár",
+    image: "/images/Messenger_creation_7CD7391F-1BCE-4434-82D7-B6A21DB27F09.jpg",
+  },
+  {
+    title: "Új tető kivitelezés - Referencia 5",
+    location: "Kecskemét",
+    image: "/images/Messenger_creation_7E9AC989-EF55-41E7-93E2-6E3B4F5C0BF2.jpg",
+  },
+  {
+    title: "Családi ház tetőmunka - Referencia 6",
+    location: "Pécs",
+    image: "/images/Messenger_creation_8C41820F-937F-489A-8F4C-F2244935171F.jpg",
+  },
+  {
+    title: "Felújítás - Referencia 7",
+    location: "Szeged",
+    image: "/images/Messenger_creation_FDEF0A8A-F30E-4D97-8A91-8D1914B8D7AF.jpg",
+  },
+  {
+    title: "Tetőfedő munka - Referencia 8",
+    location: "Miskolc",
+    image: "/images/signal-2026-04-28-165056.jpeg",
   },
 ]
 
