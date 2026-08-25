@@ -6,33 +6,45 @@ const services = [
     title: "Palatető beázás megszüntetése",
     description: "Palatetők beázás-mentesítését végezzük cseppentő-zárólemez beépítésével.",
     icon: CloudRain,
+    image: "/images/Messenger_creation_3F2E7DEA-D690-489C-80C8-43D234C01C4A.jpg",
+    alt: "Megbontott palatető léceléssel, beázás javítása közben",
   },
   {
     title: "4 rétegű tetőfestés",
     description:
       "Palatető, cseréptető 4!!! rétegű festése, ezáltal a tető felújítása. Csak Ön tudja, hogy nem új!",
     icon: PaintRoller,
+    image: "/images/project-1.jpg",
+    alt: "Frissen festett cseréptető családi házon",
   },
   {
     title: "Hullámpala tető javítása",
     description: "Hullámpala tető javítása, festése, vagy átfedése.",
     icon: Wrench,
+    image: "/images/Messenger_creation_FDEF0A8A-F30E-4D97-8A91-8D1914B8D7AF.jpg",
+    alt: "Hullámprofilos tetőfelület kéménnyel és ereszcsatornával",
   },
   {
     title: "Szalagzsindelyezés",
     description: "Palatető felújítása bontás nélkül, palatető átfedése szalagzsindellyel.",
     icon: Layers,
+    image: "/images/Messenger_creation_730C3007-224B-4C94-8662-5AD89A070DC0.jpg",
+    alt: "Bontás nélkül átfedett tető régi családi házon",
   },
   {
     title: "Ereszcsatorna beépítése",
     description:
       "A palatetők utólagos ereszcsatornázási munkálataihoz szükségtelen a palát megbontani.",
     icon: Droplets,
+    image: "/images/Messenger_creation_7E9AC989-EF55-41E7-93E2-6E3B4F5C0BF2.jpg",
+    alt: "Ereszcsatorna szabása és beépítése munka közben",
   },
   {
     title: "Tetőjavítás",
     description: "Gyors és megbízható tetőjavítás beázás, vihar- vagy egyéb károk esetén.",
     icon: Hammer,
+    image: "/images/signal-2026-04-28-165056.jpeg",
+    alt: "Kémény bádogos szegélyezése korcolt lemezfedésen",
   },
 ]
 
@@ -65,20 +77,34 @@ export function Services() {
           {services.map((service, index) => (
             <Card
               key={service.title}
-              className="group relative overflow-hidden rounded-2xl border border-border/70 surface-card transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-warm-lg"
+              className="group relative gap-0 overflow-hidden rounded-2xl border border-border/70 surface-card py-0 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-warm-lg"
             >
-              {/* Copper edge that lights up on hover */}
-              <span className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/70 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-              <CardContent className="relative flex h-full flex-col p-8">
-                {/* Watermark index */}
-                <span className="pointer-events-none absolute right-6 top-5 font-serif text-5xl leading-none text-foreground/5 transition-colors duration-300 group-hover:text-primary/15">
+              {/* Photo header */}
+              <div className="relative aspect-[16/10] overflow-hidden">
+                <img
+                  src={service.image}
+                  alt={service.alt}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                {/* Scrim that ties the photo into the card surface */}
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/15 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/25 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+                {/* Index */}
+                <span className="absolute right-3 top-3 rounded-lg bg-black/35 px-2.5 py-1 font-serif text-base leading-none text-white backdrop-blur-sm">
                   {String(index + 1).padStart(2, "0")}
                 </span>
+              </div>
 
-                <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/20 transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground group-hover:ring-primary">
-                  <service.icon className="h-6 w-6" />
-                </div>
-                <h3 className="mb-3 pr-12 text-xl font-semibold text-balance text-card-foreground">
+              {/* Icon badge straddling the photo seam */}
+              <div className="relative z-10 -mt-7 ml-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-card text-primary ring-1 ring-border shadow-warm transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground group-hover:ring-primary">
+                <service.icon className="h-6 w-6" />
+              </div>
+
+              <CardContent className="relative px-8 pb-8 pt-5">
+                <h3 className="mb-3 text-xl font-semibold text-balance text-card-foreground">
                   {service.title}
                 </h3>
                 <p className="leading-relaxed text-muted-foreground">
