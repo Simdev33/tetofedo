@@ -1,3 +1,5 @@
+import { MapPin } from "lucide-react"
+
 const projects = [
   {
     title: "Tetőfelújítás - Referencia 1",
@@ -43,13 +45,17 @@ const projects = [
 
 export function Gallery() {
   return (
-    <section id="munkaink" className="py-24 lg:py-32 bg-background">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section id="munkaink" className="tone-paper relative overflow-hidden py-24 lg:py-32">
+      <div className="absolute inset-x-0 top-0 h-px section-seam" />
+      <div className="pointer-events-none absolute -right-40 top-1/4 h-[28rem] w-[28rem] glow-primary opacity-20" />
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center mb-16">
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary mb-4">
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-primary">
+            <span className="h-1.5 w-1.5 rotate-45 bg-primary" />
             Referenciáink
-          </p>
-          <h2 className="font-serif text-3xl font-normal tracking-tight text-foreground sm:text-5xl text-balance">
+          </span>
+          <h2 className="mt-6 font-serif text-3xl font-normal tracking-tight text-balance text-foreground sm:text-5xl">
             Büszkék vagyunk munkáinkra
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
@@ -61,7 +67,7 @@ export function Gallery() {
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className={`group relative overflow-hidden rounded-2xl ${
+              className={`group relative overflow-hidden rounded-2xl ring-1 ring-border/70 transition-all duration-300 hover:-translate-y-1 hover:ring-primary/40 hover:shadow-warm-lg ${
                 index === 0 ? "md:col-span-2 lg:col-span-1" : ""
               }`}
             >
@@ -72,14 +78,25 @@ export function Gallery() {
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                <h3 className="text-xl font-semibold text-primary-foreground">
+
+              {/* Permanent bottom scrim so captions stay readable */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+              {/* Deeper scrim on hover */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+              {/* Location chip */}
+              <div className="absolute left-5 top-5 flex items-center gap-1.5 rounded-full border border-primary-foreground/20 bg-black/40 px-3 py-1 backdrop-blur-md">
+                <MapPin className="h-3 w-3 text-primary" />
+                <span className="text-xs font-medium text-primary-foreground/90">
+                  {project.location}
+                </span>
+              </div>
+
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h3 className="text-lg font-semibold text-primary-foreground sm:text-xl">
                   {project.title}
                 </h3>
-                <p className="text-sm text-primary-foreground/80 mt-1">
-                  {project.location}
-                </p>
+                <div className="mt-3 h-px w-0 bg-primary transition-all duration-500 group-hover:w-16" />
               </div>
             </div>
           ))}
