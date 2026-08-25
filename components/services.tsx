@@ -1,31 +1,33 @@
-import { Home, Wrench, Droplets, Shield, Settings, Hammer } from "lucide-react"
+import { CloudRain, PaintRoller, Wrench, Layers, Droplets, Hammer } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 
 const services = [
   {
-    title: "Tetőfedés",
-    description: "Új tetők kivitelezése minden típusú fedőanyaggal: cserép, pala, bitumenes zsindely.",
-    icon: Home,
+    title: "Palatető beázás megszüntetése",
+    description: "Palatetők beázás-mentesítését végezzük cseppentő-zárólemez beépítésével.",
+    icon: CloudRain,
   },
   {
-    title: "Tetőfelújítás",
-    description: "Meglévő tetők teljes felújítása, hőszigetelés, szerkezetmegerősítés.",
+    title: "4 rétegű tetőfestés",
+    description:
+      "Palatető, cseréptető 4!!! rétegű festése, ezáltal a tető felújítása. Csak Ön tudja, hogy nem új!",
+    icon: PaintRoller,
+  },
+  {
+    title: "Hullámpala tető javítása",
+    description: "Hullámpala tető javítása, festése, vagy átfedése.",
     icon: Wrench,
   },
   {
-    title: "Ereszcsatorna",
-    description: "Ereszcsatornák telepítése, cseréje és karbantartása minden épülettípushoz.",
+    title: "Szalagzsindelyezés",
+    description: "Palatető felújítása bontás nélkül, palatető átfedése szalagzsindellyel.",
+    icon: Layers,
+  },
+  {
+    title: "Ereszcsatorna beépítése",
+    description:
+      "A palatetők utólagos ereszcsatornázási munkálataihoz szükségtelen a palát megbontani.",
     icon: Droplets,
-  },
-  {
-    title: "Vízszigetelés",
-    description: "Lapostetők, erkélyek és teraszok professzionális vízszigetelése.",
-    icon: Shield,
-  },
-  {
-    title: "Bádogozás",
-    description: "Egyedi bádogos munkák: párkányok, kémények, szegélyek burkolása.",
-    icon: Settings,
   },
   {
     title: "Tetőjavítás",
@@ -67,7 +69,7 @@ export function Services() {
             >
               {/* Copper edge that lights up on hover */}
               <span className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/70 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-              <CardContent className="relative p-8">
+              <CardContent className="relative flex h-full flex-col p-8">
                 {/* Watermark index */}
                 <span className="pointer-events-none absolute right-6 top-5 font-serif text-5xl leading-none text-foreground/5 transition-colors duration-300 group-hover:text-primary/15">
                   {String(index + 1).padStart(2, "0")}
@@ -76,7 +78,7 @@ export function Services() {
                 <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/20 transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground group-hover:ring-primary">
                   <service.icon className="h-6 w-6" />
                 </div>
-                <h3 className="mb-3 text-xl font-semibold text-card-foreground">
+                <h3 className="mb-3 pr-12 text-xl font-semibold text-balance text-card-foreground">
                   {service.title}
                 </h3>
                 <p className="leading-relaxed text-muted-foreground">

@@ -7,6 +7,7 @@ const navigation = [
   { name: "Szolgáltatások", href: "#szolgaltatasok" },
   { name: "Rólunk", href: "#rolunk" },
   { name: "Munkáink", href: "#munkaink" },
+  { name: "Információk", href: "#informaciok" },
   { name: "Kapcsolat", href: "#kapcsolat" },
 ]
 

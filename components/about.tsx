@@ -85,6 +85,16 @@ export function About() {
               Ezért mindig a legjobb anyagokat és legmodernebb technikákat használjuk.
             </p>
 
+            {/* Owner signature */}
+            <div className="mt-8 border-l-2 border-primary/50 pl-5">
+              <p className="font-serif text-2xl font-normal text-foreground">
+                Kiss Endre
+              </p>
+              <p className="mt-1 text-sm uppercase tracking-[0.14em] text-muted-foreground">
+                Tulajdonos
+              </p>
+            </div>
+
             <div className="mt-10 grid gap-3 sm:grid-cols-2">
               {features.map((feature) => (
                 <div

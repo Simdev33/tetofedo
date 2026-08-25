@@ -10,6 +10,7 @@ const navigation = [
   { name: "Szolgáltatások", href: "#szolgaltatasok" },
   { name: "Rólunk", href: "#rolunk" },
   { name: "Munkáink", href: "#munkaink" },
+  { name: "Információk", href: "#informaciok" },
   { name: "Kapcsolat", href: "#kapcsolat" },
 ]
 
@@ -60,7 +61,7 @@ export function Header() {
             )}
           </button>
         </div>
-        <div className="hidden lg:flex lg:gap-x-8">
+        <div className="hidden lg:flex lg:gap-x-6 xl:gap-x-8">
           {navigation.map((item) => (
             <Link
               key={item.name}
